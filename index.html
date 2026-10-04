@@ -1,0 +1,929 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Lawn Service | Premier Lawn Care & Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Elfsight Live Widget Platform Script -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+
+    <style>
+        :root {
+            --brand-lime: #72bf44;
+            --brand-green-dark: #3a8027;
+            --brand-charcoal: #383b3e;
+            --bg-light: #f7f9fa;
+            --bg-white: #ffffff;
+            --border-light: #e2e8f0;
+            --text-main: #2d3748;
+            --text-muted: #64748b;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--brand-charcoal);
+            color: #d1d5db;
+            font-size: 0.85rem;
+            padding: 8px 0;
+            border-bottom: 3px solid var(--brand-lime);
+        }
+
+        .top-bar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(114, 191, 68, 0.2);
+            color: #a3e635;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-box {
+            position: relative;
+            width: 52px;
+            height: 52px;
+            border: 3px solid var(--brand-charcoal);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--brand-charcoal);
+            background: #fff;
+        }
+
+        .logo-box::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-white);
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-charcoal);
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--brand-charcoal);
+            letter-spacing: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--brand-charcoal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--brand-lime);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-lime {
+            background-color: var(--brand-lime);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(114, 191, 68, 0.3);
+        }
+
+        .btn-lime:hover {
+            background-color: var(--brand-green-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--brand-charcoal);
+            color: var(--brand-charcoal);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--brand-charcoal);
+            color: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            padding: 70px 0 90px;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eef9e8;
+            color: var(--brand-green-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 1px solid #d2f0c0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--brand-charcoal);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--brand-lime);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-image-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 6px solid #ffffff;
+            background: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Services */
+        .services {
+            padding: 90px 0;
+            background: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--brand-charcoal);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-lime);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: #eef9e8;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--brand-charcoal);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            padding: 90px 0;
+            background: var(--bg-light);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            background: var(--bg-white);
+            color: var(--text-main);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--brand-lime);
+            color: #fff;
+            border-color: var(--brand-lime);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-img-wrap {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-caption h4 {
+            font-size: 1rem;
+            color: var(--brand-charcoal);
+        }
+
+        .gallery-location-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        /* Google Reviews Section */
+        .reviews-section {
+            padding: 90px 0;
+            background: var(--bg-white);
+        }
+
+        .widget-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 90px 0;
+            background: var(--bg-light);
+        }
+
+        .contact-box {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--brand-charcoal);
+            border-radius: var(--radius-lg);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info {
+            padding: 50px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #383b3e 0%, #2b2d30 100%);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: #9ca3af;
+            margin-bottom: 30px;
+        }
+
+        .info-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-detail-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(114, 191, 68, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-lime);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            padding: 50px;
+            background: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: var(--brand-charcoal);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--brand-lime);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brand-charcoal);
+            color: #9ca3af;
+            padding: 40px 0 20px;
+            border-top: 4px solid var(--brand-lime);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #4b5563;
+            padding-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-box {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: transparent;
+        }
+
+        .footer-logo .brand-title, .footer-logo .brand-subtitle {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container, .contact-box {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style></head><body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-info">
+                <span>📞 (555) 123-4567</span>
+                <span>✉ contact@elite-lawnservice.com</span>
+            </div>
+            <div>
+                <span>Primary Service Area: </span>
+                <span class="location-tag">📍 Manchester, CT</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-box">E</div>
+                <div class="brand-text-block">
+                    <span class="brand-title">ELITE LAWN</span>
+                    <span class="brand-subtitle">SERVICE</span>
+                </div>
+            </a>
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact" class="btn btn-lime">Request Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="hero-badge">
+                    <span>📍</span> Proudly Serving Manchester, CT & Surrounding Areas
+                </div>
+                <h1>Precision Cut. <span>Elite Care.</span></h1>
+                <p>Top-tier lawn maintenance, precision mowing, tree removal, and year-round commercial & residential property care.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-lime">Get Free Estimate</a>
+                    <a href="#gallery" class="btn btn-outline">View Recent Work</a>
+                </div>
+            </div>
+            <div class="hero-image-card">
+                <img src="Images\LawnMow\IMG_9680.jpeg" alt="Elite Lawn Service Mowing">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Property & Lawn Services</h2>
+            <p>Reliable, professional outdoor property maintenance for residential and commercial clients year-round.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Lawn Mowing & Edging</h3>
+                <p>Clean, alternating stripe patterns, edge trimming along driveways and beds, and full clipping blowout.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚜</div>
+                <h3>Brush Mowing & Clearing</h3>
+                <p>Heavy-duty clearing for overgrown brush, tall thickets, and field maintenance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏡</div>
+                <h3>Landscape Care</h3>
+                <p>Mulch installation, garden bed cleanup, shrub trimming, and general spring/fall property cleanups.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪵</div>
+                <h3>Tree & Stump Removal</h3>
+                <p>Safe removal of dead or hazardous trees, limb trimming, and complete stump grinding to keep your property clear.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>Snow Management</h3>
+                <p>Dependable commercial and residential snow plowing, driveway clearing, sidewalk shoveling, and ice management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2>Our Recent Work</h2>
+            <p>Real results delivered across properties in Manchester, CT and nearby communities.</p>
+        </div>
+
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="mowing">Lawn Mowing</button>
+            <button class="filter-btn" data-filter="tree">Tree & Stump Removal</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Lawn Mowing Items -->
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_7639.jpg" alt="Backyard Lawn Mowing Pattern">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Backyard Stripe Pattern</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_7640.jpg" alt="Cross Cut Lawn Stripes">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Cross-Cut Lawn Mowing</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9284.jpeg" alt="Front Yard Lawn Care">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Front Yard Precision Cut</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9286.jpeg" alt="Side Lawn Mowing Striping">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Side Yard Striping</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9557.jpeg" alt="Fence Line Mowing and Trimming">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Property Line Cut & Trim</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9633.jpeg" alt="Shaded Backyard Lawn Mowing">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Shaded Turf Mowing</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9680.jpeg" alt="Expansive Commercial Mowing Stripes">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Large Estate Turf Cut</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9683.jpeg" alt="Hilly Property Lawn Cut">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Sloped Lawn Mowing</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mowing">
+                <div class="gallery-img-wrap">
+                    <img src="Images\LawnMow\IMG_9714.jpeg" alt="Commercial Zero-Turn Mowing Equipment">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Commercial Equipment Mowing</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <!-- Tree & Stump Removal Items -->
+            <div class="gallery-item" data-category="tree">
+                <div class="gallery-img-wrap">
+                    <img src="Images\Tree\IMG_9483.jpeg" alt="Overgrown Tree and Brush Before Clearing in Manchester, CT">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Overgrown Tree & Brush Before Clearing</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="tree">
+                <div class="gallery-img-wrap">
+                    <img src="Images\Tree\IMG_9484.jpeg" alt="Tight-Space Tree Trimming Near Structure in Manchester, CT">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Tight-Space Tree Trimming</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="tree">
+                <div class="gallery-img-wrap">
+                    <img src="Images\Tree\IMG_9491.jpeg" alt="Fence Line Cleared Post-Removal in Manchester, CT">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Fence Line Cleared Post-Removal</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="tree">
+                <div class="gallery-img-wrap">
+                    <img src="Images\Tree\IMG_9495.jpeg" alt="Completed Tree and Stump Removal Project in Manchester, CT">
+                </div>
+                <div class="gallery-caption">
+                    <h4>Completed Tree & Stump Removal</h4>
+                    <span class="gallery-location-badge">Manchester, CT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (Live Google Reviews Embed Widget) -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-header">
+            <h2>Live Customer Reviews</h2>
+            <p>Verified reviews synced directly from our Google Business profile.</p>
+        </div>
+
+        <div class="widget-wrapper">
+            <!-- Elfsight Google Reviews Widget -->
+            <div class="elfsight-app-0d8f5caf-7a4c-4118-884c-0e5591353207" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h3>Request a Free Quote</h3>
+                <p>Reach out to discuss your property maintenance needs in Manchester, CT or surrounding towns.</p>
+                
+                <div class="info-detail">
+                    <div class="info-detail-icon">📞</div>
+                    <div>
+                        <strong>Call / Text</strong>
+                        <p>(555) 123-4567</p>
+                    </div>
+                </div>
+
+                <div class="info-detail">
+                    <div class="info-detail-icon">📍</div>
+                    <div>
+                        <strong>Service Area Location</strong>
+                        <p>Manchester, CT</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been sent.');">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="(555) 000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>Service City / Location</label>
+                    <input type="text" value="Manchester, CT" placeholder="Manchester, CT">
+                </div>
+                <div class="form-group">
+                    <label>Requested Service</label>
+                    <select>
+                        <option>Lawn Mowing & Maintenance</option>
+                        <option>Brush Clearing</option>
+                        <option>Landscape Design / Cleanup</option>
+                        <option>Tree & Stump Removal</option>
+                        <option>Snow Management</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-lime" style="width: 100%;">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="brand-logo footer-logo">
+                <div class="logo-box">E</div>
+                <div class="brand-text-block">
+                    <span class="brand-title">ELITE LAWN</span>
+                    <span class="brand-subtitle">SERVICE</span>
+                </div>
+            </div>
+            <div>
+                <span>Serving Manchester, CT & Surrounding Communities</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Lawn Service. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Filtering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.gallery-filters .filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>
